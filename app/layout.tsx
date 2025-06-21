@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/scroll-to-top"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Justice Law Firm",
+  title: "Vista Legal",
   description:
     "A professional law firm specializing in various practice areas including family law, corporate law, and criminal defense.",
   icons: {

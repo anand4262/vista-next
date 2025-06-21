@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     name: "Mariam Siddiqui",
     position: "Immigration Law Client",
     quote:
-      "Imran Raza changed our lives. My family and I had been struggling with immigration issues for years until we found Justice Law Firm. Imran guided us through the complex process with patience and expertise, and now we're settled in our new home.",
+      "Imran Raza changed our lives. My family and I had been struggling with immigration issues for years until we found Vista Legal Firm. Imran guided us through the complex process with patience and expertise, and now we're settled in our new home.",
     rating: 5,
   },
   {

@@ -24,7 +24,7 @@ export default function AttorneysPage() {
             specialties={["Family Law", "Estate Planning"]}
             education={["LL.B., Punjab University Law College", "B.A., Lahore University of Management Sciences"]}
             barAdmissions={["Pakistan Bar Council", "Lahore High Court Bar Association"]}
-            bio="Fatima Jinnah has over 25 years of experience in family law and estate planning. As a founding partner of Justice Law Firm, she has helped hundreds of clients navigate complex legal matters with compassion and expertise. Fatima is known for her strategic approach to negotiation and litigation, always focusing on achieving the best possible outcomes for her clients."
+            bio="Fatima Jinnah has over 25 years of experience in family law and estate planning. As a founding partner of Vista Legal Firm, she has helped hundreds of clients navigate complex legal matters with compassion and expertise. Fatima is known for her strategic approach to negotiation and litigation, always focusing on achieving the best possible outcomes for her clients."
             email="fatima@justicelawfirm.pk"
             phone="+92 300 123 4567"
           />

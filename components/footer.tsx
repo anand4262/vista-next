@@ -10,13 +10,12 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-2">
             <Link href="/" className="mb-4 flex items-center space-x-2">
               <Scale className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">Justice Law</span>
+              <span className="text-xl font-bold">Vista Legal</span>
             </Link>
             <p className="mb-4 max-w-xs text-muted-foreground">
               Dedicated legal professionals committed to protecting your rights and securing your future.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="https://facebook.com" icon={<Facebook className="h-5 w-5" />} label="Facebook" />
               <SocialLink href="https://twitter.com" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
             </div>
           </div>
@@ -74,7 +73,7 @@ export default function Footer() {
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-center text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Justice Law Firm. All rights reserved.
+              &copy; {new Date().getFullYear()} Vista Legal Firm. All rights reserved.
             </p>
             <div className="flex space-x-4 text-sm">
               <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary">

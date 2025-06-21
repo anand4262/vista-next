@@ -120,7 +120,7 @@ export default function ContactPage() {
                   <Input
                     id="name"
                     name="name"
-                    placeholder="John Doe"
+                    placeholder="Name"
                     required
                     value={formData.name}
                     onChange={handleChange}
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Email"
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   <Input
                       id="phone"
                       name="phone"
-                      placeholder="+92 300 123 4567"
+                      placeholder="+91"
                       value={formData.phone}
                       onChange={handleChange}
                       inputMode="numeric"
@@ -172,15 +172,11 @@ export default function ContactPage() {
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="family-law">Family Law</SelectItem>
-                      <SelectItem value="corporate-law">Corporate Law</SelectItem>
-                      <SelectItem value="criminal-defense">Criminal Defense</SelectItem>
-                      <SelectItem value="estate-planning">Estate Planning</SelectItem>
-                      <SelectItem value="personal-injury">Personal Injury</SelectItem>
-                      <SelectItem value="immigration-law">Immigration Law</SelectItem>
-                      <SelectItem value="employment-law">Employment Law</SelectItem>
-                      <SelectItem value="real-estate-law">Real Estate Law</SelectItem>
-                      <SelectItem value="intellectual-property">Intellectual Property</SelectItem>
+                      <SelectItem value="criminal -law">Criminal  Law</SelectItem>
+                      <SelectItem value="civil-law">Civil Law</SelectItem>
+                      <SelectItem value="corporate-and-commercial-law">Corporate and Commercial Law</SelectItem>
+                      <SelectItem value="litigation-and-dispute-resolution">Litigation and Dispute Resolution</SelectItem>
+                      <SelectItem value="legal-documentation-and-advisory:">Legal Documentation and Advisory</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -232,17 +228,21 @@ export default function ContactPage() {
                   <MapPin className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Office Address</h3>
-                    <p className="text-muted-foreground">123 Justice Avenue, Block F</p>
-                    <p className="text-muted-foreground">Lahore, Punjab 54000</p>
+                    <p className="text-muted-foreground">Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,</p>
+                    <p className="text-muted-foreground">Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
+                                <div className="flex items-start">
                   <Phone className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-muted-foreground">+92 300 123 4567</p>
-                    <p className="text-muted-foreground">Toll Free: 0800 12345</p>
+                    <a
+                      href="tel:+918197741693"
+                      className="text-muted-foreground hover:underline"
+                    >
+                      +91 8197741693
+                    </a>
                   </div>
                 </div>
 
@@ -250,36 +250,29 @@ export default function ContactPage() {
                   <Mail className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-muted-foreground">info@justicelawfirm.pk</p>
-                    <p className="text-muted-foreground">support@justicelawfirm.pk</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Clock className="mr-4 h-6 w-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold">Office Hours</h3>
-                    <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-muted-foreground">Saturday: 10:00 AM - 2:00 PM (By appointment)</p>
-                    <p className="text-muted-foreground">Sunday: Closed</p>
+                    <a
+                      href="mailto:vistalegalassociates@gmail.com"
+                      className="text-muted-foreground hover:underline"
+                    >
+                      vistalegalassociates@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
- {/* Map */}
- <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border">
+{/* Map */}
+          <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108704.15078080388!2d74.24743082321283!3d31.483104525226305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1652285420047!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.716481988701!2d77.55614797507675!3d12.98997698732703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d0001721367%3A0x4094641fd1b46226!2sVista%20Legal!5e0!3m2!1sen!2sin!4v1750495432459!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location"
+                title="Vista Legal Location"
               ></iframe>
             </div>
-           
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const Services = () => {
           <div>
             <h2 className="mb-4 text-2xl font-bold">Our Mission</h2>
             <p className="mb-4 text-muted-foreground">
-              At Justice Law Firm, our mission is to provide exceptional legal representation with integrity,
+              At Vista Legal Firm, our mission is to provide exceptional legal representation with integrity,
               dedication, and a commitment to achieving the best possible outcomes for our clients. We believe in
               justice for all and strive to make quality legal services accessible to those who need them most.
             </p>
@@ -58,7 +58,7 @@ const Services = () => {
               federal courts, establishing precedents that have shaped legal practice in our jurisdiction.
             </p>
             <p className="text-muted-foreground">
-              Today, Justice Law Firm stands as a respected legal institution with a track record of success and a
+              Today, Vista Legal Firm stands as a respected legal institution with a track record of success and a
               reputation for excellence. We continue to evolve and adapt to changing legal landscapes while remaining
               true to our core values and commitment to our clients.
             </p>

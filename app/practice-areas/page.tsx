@@ -12,7 +12,7 @@ export default function PracticeAreasPage() {
 
       <div className="container mx-auto px-4 py-16">
         <p className="mx-auto mb-12 max-w-3xl text-center text-xl text-muted-foreground">
-          At Justice Law Firm, we offer comprehensive legal services across a wide range of practice areas. Our
+          At Vista Legal Firm, we offer comprehensive legal services across a wide range of practice areas. Our
           experienced attorneys provide personalized representation tailored to your specific needs.
         </p>
 

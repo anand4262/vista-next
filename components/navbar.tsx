@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 import { Scale, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Logo from "@/components/Logo"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -29,10 +30,7 @@ export default function Navbar() {
       className={`sticky top-0 z-50 w-full transition-all ${isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm" : "bg-background"}`}
     >
       <div className="container flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2">
-          <Scale className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold">Justice Law</span>
-        </Link>
+        <Logo />
 
         <nav className="hidden space-x-6 md:flex">
           <NavLink href="/" active={isActive("/")}>
@@ -41,11 +39,17 @@ export default function Navbar() {
           <NavLink href="/about" active={isActive("/about")}>
             About
           </NavLink>
-          <NavLink href="/practice-areas" active={isActive("/practice-areas")}>
-            Practice Areas
+          <NavLink href="/what-we-do" active={isActive("/what-we-do")}>
+            What We Do
           </NavLink>
           <NavLink href="/attorneys" active={isActive("/attorneys")}>
             Attorneys
+          </NavLink>
+           <NavLink href="/services" active={isActive("/services")}>
+            Services
+          </NavLink>
+          <NavLink href="/practice-areas" active={isActive("/practice-areas")}>
+            Practice Areas
           </NavLink>
         </nav>
 
@@ -63,10 +67,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col space-y-4 py-4">
-                <Link href="/" className="flex items-center space-x-2">
-                  <Scale className="h-6 w-6 text-primary" />
-                  <span className="text-lg font-bold">Justice Law</span>
-                </Link>
+                <Logo />
 
                 <div className="flex flex-col space-y-3">
                   <MobileNavLink href="/" active={isActive("/")}>
@@ -75,12 +76,19 @@ export default function Navbar() {
                   <MobileNavLink href="/about" active={isActive("/about")}>
                     About
                   </MobileNavLink>
+                  <MobileNavLink href="/what-we-do" active={isActive("/what-we-do")}>
+                    What We Do
+                  </MobileNavLink>
+                   <MobileNavLink href="/attorneys" active={isActive("/attorneys")}>
+                    Attorneys
+                  </MobileNavLink>
+                   <MobileNavLink href="/services" active={isActive("/services")}>
+                    Services
+                  </MobileNavLink>
                   <MobileNavLink href="/practice-areas" active={isActive("/practice-areas")}>
                     Practice Areas
                   </MobileNavLink>
-                  <MobileNavLink href="/attorneys" active={isActive("/attorneys")}>
-                    Attorneys
-                  </MobileNavLink>
+                 
                 </div>
 
                 <Button asChild className="mt-4">

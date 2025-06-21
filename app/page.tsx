@@ -19,7 +19,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-primary/90"
+            className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Contact Us <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

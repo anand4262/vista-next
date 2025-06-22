@@ -172,7 +172,7 @@ export default function ContactPage() {
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="criminal -law">Criminal  Law</SelectItem>
+                      <SelectItem value="criminal -law">Criminal Law</SelectItem>
                       <SelectItem value="civil-law">Civil Law</SelectItem>
                       <SelectItem value="corporate-and-commercial-law">Corporate and Commercial Law</SelectItem>
                       <SelectItem value="litigation-and-dispute-resolution">Litigation and Dispute Resolution</SelectItem>

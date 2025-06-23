@@ -1,72 +1,79 @@
-import Image from "next/image"
+import type React from "react"
+import { Scale, Gavel, FileText, Building, Shield, Users, Briefcase, Home, Landmark } from "lucide-react"
 import PageHeader from "@/components/page-header"
 
-const WhatWeDo = () => {
+export default function PracticeAreasPage() {
   return (
     <div>
       <PageHeader
-        title="About Our Firm"
-        description="Learn about our history, mission, values, and commitment to excellence in legal services."
+        title="Our Practice Areas"
+        description="Comprehensive legal services tailored to your specific needs across a wide range of practice areas."
       />
 
       <div className="container mx-auto px-4 py-16">
-        <div className="mb-16 grid gap-12 md:grid-cols-2 md:items-center">
-          <div>
-            <h2 className="mb-4 text-2xl font-bold">Our Mission</h2>
-            <p className="mb-4 text-muted-foreground">
-              At Vista Legal Firm, our mission is to provide exceptional legal representation with integrity,
-              dedication, and a commitment to achieving the best possible outcomes for our clients. We believe in
-              justice for all and strive to make quality legal services accessible to those who need them most.
-            </p>
-            <p className="text-muted-foreground">
-              We approach each case with personalized attention, recognizing that every client's situation is unique and
-              deserves a tailored legal strategy. Our attorneys work tirelessly to protect your rights and interests,
-              guiding you through complex legal processes with clarity and compassion.
-            </p>
-          </div>
-          <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
-            <Image
-              src="/images/team-meeting.jpg"
-              alt="Law firm team meeting in a conference room"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <p className="mx-auto mb-12 max-w-6xl text-center text-xl text-muted-foreground">
+          At Vista Legal, we are committed to delivering exceptional legal services across a broad range of practice areas. Based in the heart of Bengaluru, our firm serves individuals, businesses, and organizations with precision, professionalism, and personalized attention. We understand that each legal matter is unique, and we pride ourselves on offering strategic, client-focused solutions that align with your goals.
+        </p>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <PracticeAreaCard
+            id="Criminal Law"
+            icon={<Scale className="h-12 w-12" />}
+            title="Family Law"
+            description="We provide strong legal representation in criminal matters, from bail applications and anticipatory bail to trial and appellate proceedings. With our roots in criminal litigation, we bring a sharp, tactical edge to every case we handle."
+          />
 
-        <div className="mb-16 grid gap-12 md:grid-cols-2 md:items-center">
-          <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
-            <Image
-              src="/images/firm-history.jpg"
-              alt="Historic law firm building"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div>
-            <h2 className="mb-4 text-2xl font-bold">Our History</h2>
-            <p className="mb-4 text-muted-foreground">
-              Founded in 1995 by Fatima Jinnah and Ahmed Khan, our firm began as a small practice focused on family law
-              and criminal defense. Over the decades, we have grown into a full-service law firm with expertise across
-              multiple practice areas, serving clients throughout Pakistan.
-            </p>
-            <p className="mb-4 text-muted-foreground">
-              Throughout our history, we have maintained our founding principles of client-centered representation,
-              ethical practice, and community involvement. Our attorneys have secured landmark victories in state and
-              federal courts, establishing precedents that have shaped legal practice in our jurisdiction.
-            </p>
-            <p className="text-muted-foreground">
-              Today, Vista Legal Firm stands as a respected legal institution with a track record of success and a
-              reputation for excellence. We continue to evolve and adapt to changing legal landscapes while remaining
-              true to our core values and commitment to our clients.
-            </p>
-          </div>
+          <PracticeAreaCard
+            id="corporate-law"
+            icon={<Building className="h-12 w-12" />}
+            title="Civil Law"
+            description="Our civil practice covers property disputes, injunctions, recovery suits, partition suits, contractual disagreements, and more. We work closely with our clients to protect their rights and resolve disputes efficiently."
+          />
+
+          <PracticeAreaCard
+            id="criminal-defense"
+            icon={<Gavel className="h-12 w-12" />}
+            title="Corporate and Commercial Law"
+            description="We assist businesses with company formation, regulatory compliance, shareholder agreements, commercial contracts, and legal due diligence. Whether you're a startup or an established enterprise, we offer sound legal counsel to support your growth."
+          />
+
+          <PracticeAreaCard
+            id="estate-planning"
+            icon={<FileText className="h-12 w-12" />}
+            title="Litigation and Dispute Resolution"
+            description="Vista Legal is experienced in handling litigation before various courts and tribunals, including the High Court of Karnataka, civil courts, consumer forums, and quasi-judicial bodies. We also offer arbitration and mediation services for clients seeking alternative dispute resolution."
+          />
+
+          <PracticeAreaCard
+            id="personal-injury"
+            icon={<Shield className="h-12 w-12" />}
+            title="Legal Documentation and Advisory"
+            description="We draft and review agreements, contracts, legal notices, and opinions to ensure our clients are protected and fully informed. Our advisory services are designed to prevent legal pitfalls and promote informed decision-making."
+          />
         </div>
+        <p className="mx-auto mt-16 mb-12 max-w-6xl text-center text-xl text-muted-foreground">
+          At Vista Legal, we stand by our values of excellence, integrity, and client-first service. Every matter we take on is handled with dedication, attention to detail, and a relentless focus on achieving the best possible outcome. Our aim is not just to represent you—but to empower you with clarity, confidence, and trusted legal support every step of the way.
+       </p>
       </div>
     </div>
   )
 }
 
-export default  WhatWeDo
+function PracticeAreaCard({
+  id,
+  icon,
+  title,
+  description,
+}: {
+  id: string
+  icon: React.ReactNode
+  title: string
+  description: string
+}) {
+  return (
+    <div id={id} className="flex flex-col rounded-lg border h-80 border-border bg-card p-6 transition-all hover:shadow-md">
+      <div className="mb-4 text-primary">{icon}</div>
+      <h2 className="mb-3 text-2xl font-bold">{title}</h2>
+      <p className="mb-4 text-muted-foreground">{description}</p>
+    </div>
+  )
+}

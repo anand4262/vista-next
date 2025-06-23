@@ -6,8 +6,10 @@ export default function Footer() {
   return (
     <footer className="border-t bg-muted">
       <div className="container px-4 py-12 md:py-16">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
-          <div className="col-span-1 lg:col-span-2">
+        
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
+          {/* Left Section */}
+          <div className="lg:w-2/5">
             <Link href="/" className="mb-4 flex items-center space-x-2">
               <Scale className="h-8 w-8 text-primary" />
               <span className="text-xl font-bold">Vista Legal</span>
@@ -20,55 +22,47 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <ul className="space-y-2">
-              <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/about">About Us</FooterLink>
-              <FooterLink href="/practice-areas">Practice Areas</FooterLink>
-              <FooterLink href="/attorneys">Our Attorneys</FooterLink>
-              <FooterLink href="/contact">Contact Us</FooterLink>
-            </ul>
-          </div>
+          {/* Right Section */}
+          <div className="flex flex-col sm:flex-row gap-8 lg:w-3/5 justify-end">
+            <div>
+              <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+              <ul className="space-y-2">
+                <FooterLink href="/">Home</FooterLink>
+                <FooterLink href="/about">About Us</FooterLink>
+                <FooterLink href="/what-we-do">What We Do</FooterLink>
+                <FooterLink href="/attorneys">Our Attorneys</FooterLink>
+                <FooterLink href="/contact">Contact Us</FooterLink>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Practice Areas</h3>
-            <ul className="space-y-2">
-              <FooterLink href="/practice-areas#family-law">Family Law</FooterLink>
-              <FooterLink href="/practice-areas#corporate-law">Corporate Law</FooterLink>
-              <FooterLink href="/practice-areas#criminal-defense">Criminal Defense</FooterLink>
-              <FooterLink href="/practice-areas#estate-planning">Estate Planning</FooterLink>
-              <FooterLink href="/practice-areas#personal-injury">Personal Injury</FooterLink>
-              <FooterLink href="/practice-areas#immigration-law">Immigration Law</FooterLink>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Info</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 text-primary" />
-                <span className="text-muted-foreground">
-                  Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,
-                  <br />
-                 Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-2 h-5 w-5 text-primary" />
-                <a href="tel:+91 8197741693" className="text-muted-foreground hover:text-primary">
-                  +91 8197741693
-                </a>
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 h-5 w-5 text-primary" />
-                <a href="vistalegalassociates@gmail.com" className="text-muted-foreground hover:text-primary">
-                  vistalegalassociates@gmail.com
-                </a>
-              </li>
-            </ul>
+            <div>
+              <h3 className="mb-4 text-lg font-semibold">Contact Info</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <MapPin className="mr-2 h-5 w-5 text-primary" />
+                  <span className="text-muted-foreground">
+                    Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,
+                    <br />
+                    Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021
+                  </span>
+                </li>
+                <li className="flex items-center">
+                  <Phone className="mr-2 h-5 w-5 text-primary" />
+                  <a href="tel:+91 8197741693" className="text-muted-foreground hover:text-primary">
+                    +91 8197741693
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <Mail className="mr-2 h-5 w-5 text-primary" />
+                  <a href="mailto:vistalegalassociates@gmail.com" className="text-muted-foreground hover:text-primary">
+                    vistalegalassociates@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+
 
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">

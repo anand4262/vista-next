@@ -42,15 +42,13 @@ export default function Navbar() {
           <NavLink href="/what-we-do" active={isActive("/what-we-do")}>
             What We Do
           </NavLink>
-          <NavLink href="/attorneys" active={isActive("/attorneys")}>
-            Attorneys
+          <NavLink href="/partners" active={isActive("/partners")}>
+            Partners
           </NavLink>
            <NavLink href="/services" active={isActive("/services")}>
             Services
           </NavLink>
-          <NavLink href="/practice-areas" active={isActive("/practice-areas")}>
-            Practice Areas
-          </NavLink>
+
         </nav>
 
         <div className="flex items-center space-x-4">
@@ -76,17 +74,15 @@ export default function Navbar() {
                   <MobileNavLink href="/about" active={isActive("/about")}>
                     About
                   </MobileNavLink>
-                  <MobileNavLink href="/what-we-do" active={isActive("/what-we-do")}>
-                    What We Do
-                  </MobileNavLink>
+
                    <MobileNavLink href="/attorneys" active={isActive("/attorneys")}>
                     Attorneys
                   </MobileNavLink>
                    <MobileNavLink href="/services" active={isActive("/services")}>
                     Services
                   </MobileNavLink>
-                  <MobileNavLink href="/practice-areas" active={isActive("/practice-areas")}>
-                    Practice Areas
+                  <MobileNavLink href="/what-we-do" active={isActive("/what-we-do")}>
+                    What We Do
                   </MobileNavLink>
                  
                 </div>

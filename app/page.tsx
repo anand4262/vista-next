@@ -73,57 +73,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Results Section */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl">Notable Case Results</h2>
-          <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-muted-foreground">
-            Our track record of success speaks for itself. Here are some of our recent victories on behalf of our
-            clients.
-          </p>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <CaseResultCard
-              amount="PKR 25 Million"
-              category="Personal Injury"
-              description="Settlement for a client who suffered severe injuries in a commercial truck accident."
-            />
-            <CaseResultCard
-              amount="PKR 18 Million"
-              category="Medical Malpractice"
-              description="Jury verdict for a patient who experienced complications due to surgical negligence."
-            />
-            <CaseResultCard
-              amount="Charges Dismissed"
-              category="Criminal Defense"
-              description="All charges dropped against our client in a high-profile white collar criminal case."
-            />
-            <CaseResultCard
-              amount="PKR 9.5 Million"
-              category="Employment Law"
-              description="Settlement in a workplace discrimination and wrongful termination lawsuit."
-            />
-            <CaseResultCard
-              amount="Full Custody"
-              category="Family Law"
-              description="Secured full custody for our client in a complex international custody dispute."
-            />
-            <CaseResultCard
-              amount="PKR 32 Million"
-              category="Corporate Law"
-              description="Favorable resolution in a business contract dispute, saving our client's company."
-            />
-          </div>
-
-          <div className="mt-10 text-center">
-            <p className="text-muted-foreground">
-              *Past results do not guarantee similar outcomes in future cases. Each case is unique and results will vary
-              based on the specific facts and legal issues.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -132,55 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Legal Resources Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl">Legal Resources</h2>
-          <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-muted-foreground">
-            Access our collection of legal guides and resources to help you better understand your legal rights and
-            options.
-          </p>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Understanding Divorce in California"
-              description="A comprehensive guide to the divorce process, including property division, child custody, and support."
-              link="#"
-            />
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Small Business Legal Checklist"
-              description="Essential legal considerations for starting and operating a small business in today's environment."
-              link="#"
-            />
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Personal Injury Claims Process"
-              description="What to expect when filing a personal injury claim and how to maximize your compensation."
-              link="#"
-            />
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Estate Planning Essentials"
-              description="Key documents everyone should have and how to ensure your wishes are legally protected."
-              link="#"
-            />
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Criminal Defense FAQ"
-              description="Answers to common questions about criminal charges, rights, and the legal process."
-              link="#"
-            />
-            <ResourceCard
-              icon={<BookOpen className="h-10 w-10" />}
-              title="Immigration Law Updates"
-              description="Recent changes to immigration policies and how they might affect your status or application."
-              link="#"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-16">
@@ -197,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-primary py-16 text-white">
+      <section className="bg-primary py-16 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Discuss Your Case?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
@@ -205,7 +105,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-md bg-white px-6 py-3 text-lg font-medium text-primary transition-colors hover:bg-gray-100"
+            className="inline-flex items-center rounded-md bg-white px-6 py-3 text-lg font-medium text-primary-foreground transition-colors hover:bg-gray-100"
           >
             Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

@@ -49,21 +49,21 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-primary" />
                 <span className="text-muted-foreground">
-                  123 Justice Avenue, Block F
+                  Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,
                   <br />
-                  Lahore, Punjab 54000
+                 Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-primary" />
-                <a href="tel:+923001234567" className="text-muted-foreground hover:text-primary">
-                  +92 300 123 4567
+                <a href="tel:+91 8197741693" className="text-muted-foreground hover:text-primary">
+                  +91 8197741693
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-primary" />
-                <a href="mailto:info@justicelawfirm.pk" className="text-muted-foreground hover:text-primary">
-                  info@justicelawfirm.pk
+                <a href="vistalegalassociates@gmail.com" className="text-muted-foreground hover:text-primary">
+                  vistalegalassociates@gmail.com
                 </a>
               </li>
             </ul>

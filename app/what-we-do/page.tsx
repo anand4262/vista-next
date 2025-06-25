@@ -11,9 +11,7 @@ export default function PracticeAreasPage() {
       />
 
       <div className="container mx-auto px-4 py-16">
-        <p className="mx-auto mb-12 max-w-6xl text-center text-xl text-muted-foreground">
-          At Vista Legal, we are committed to delivering exceptional legal services across a broad range of practice areas. Based in the heart of Bengaluru, our firm serves individuals, businesses, and organizations with precision, professionalism, and personalized attention. We understand that each legal matter is unique, and we pride ourselves on offering strategic, client-focused solutions that align with your goals.
-        </p>
+        
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <PracticeAreaCard
             id="Criminal Law"
@@ -49,11 +47,14 @@ export default function PracticeAreasPage() {
             title="Legal Documentation and Advisory"
             description="We draft and review agreements, contracts, legal notices, and opinions to ensure our clients are protected and fully informed. Our advisory services are designed to prevent legal pitfalls and promote informed decision-making."
           />
-        </div>
-        <p className="mx-auto mt-16 mb-12 max-w-6xl text-center text-xl text-muted-foreground">
+          </div>
+          <p className="mx-auto mt-16 mb-4 max-w-6xl text-center text-xl text-muted-foreground">
+          At Vista Legal, we are committed to delivering exceptional legal services across a broad range of practice areas. Based in the heart of Bengaluru, our firm serves individuals, businesses, and organizations with precision, professionalism, and personalized attention. We understand that each legal matter is unique, and we pride ourselves on offering strategic, client-focused solutions that align with your goals.
+        </p>
+        <p className="mx-auto mb-12 max-w-6xl text-center text-xl text-muted-foreground">
           At Vista Legal, we stand by our values of excellence, integrity, and client-first service. Every matter we take on is handled with dedication, attention to detail, and a relentless focus on achieving the best possible outcome. Our aim is not just to represent you—but to empower you with clarity, confidence, and trusted legal support every step of the way.
        </p>
-      </div>
+        </div>
     </div>
   )
 }

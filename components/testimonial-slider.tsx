@@ -15,42 +15,42 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Rashid Ahmed",
+    name: "Vidya Amin",
     position: "Family Law Client",
     quote:
-      "Fatima Jinnah handled my divorce with compassion and professionalism. She fought for my rights while keeping the process as amicable as possible. I couldn't have asked for better representation during such a difficult time.",
+      "My grandmother wanted to gift a property, and Vista Legal made the entire process incredibly smooth and hassle-free. They handled everything with such care and efficiency—it meant a lot to our family. Truly grateful beyond words.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Mariam Siddiqui",
-    position: "Immigration Law Client",
+    name: "Shweta B.N",
+    position: "Corporate and Commercial Law Client",
     quote:
-      "Imran Raza changed our lives. My family and I had been struggling with immigration issues for years until we found Vista Legal Firm. Imran guided us through the complex process with patience and expertise, and now we're settled in our new home.",
+      "Vista Legal made registering my property in India smooth and hassle-free while I was based in London. They handled the GPA process professionally, kept me updated, and ensured everything was completed on time. Highly recommend their services!",
     rating: 5,
   },
   {
     id: 3,
-    name: "Tariq Mahmood",
-    position: "Personal Injury Client",
+    name: "Khushi Pashine",
+    position: "Civil Law Client",
     quote:
-      "After my accident, I was overwhelmed with medical bills and insurance claims. Ayesha Mahmood took over and handled everything, securing a settlement that covered all my expenses and compensated me for my suffering. I'm forever grateful.",
+      "My uncle recently needed help preparing his will, and Vista Legal made the entire process easy and reassuring for him. They listened to him with patience, explained everything clearly, and guided him with genuine care. I'm truly grateful for the support and professionalism they showed throughout.",
     rating: 5,
   },
   {
     id: 4,
-    name: "Saima Khan",
-    position: "Corporate Law Client",
+    name: "Sahana",
+    position: "Legal Documentation and Advisory",
     quote:
-      "Ahmed Khan has been our company's attorney for over a decade. His strategic advice has helped us navigate complex business transactions and regulatory challenges. He's not just our lawyer; he's a trusted business advisor.",
+      "Registering my partnership firm with Vista Legal was a breeze. Their team is highly professional and well-connected, making the entire process fast and hassle-free. Highly recommend their services for anyone looking to register a firm!",
     rating: 5,
   },
   {
     id: 5,
-    name: "Faisal Malik",
-    position: "Criminal Defense Client",
+    name: "Lolitha Reddy",
+    position: "Litigation and Dispute Resolution Client",
     quote:
-      "When I was facing serious criminal charges, Zainab Malik was my fierce advocate. Her knowledge of the law and courtroom presence were impressive. Thanks to her defense strategy, my charges were reduced significantly.",
+      "Vista Legal helped resolve a long-standing property issue that had been troubling me for years. Their professionalism, clear advice, and effective handling made all the difference. Highly recommended!",
     rating: 5,
   },
 ]

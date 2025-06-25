@@ -33,38 +33,33 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <PracticeAreaCard
               icon={<Scale className="h-10 w-10" />}
-              title="Family Law"
-              description="Divorce, child custody, and support matters handled with compassion and expertise."
+              title="Criminal Law"
+              description=""
             />
             <PracticeAreaCard
               icon={<Building className="h-10 w-10" />}
-              title="Corporate Law"
-              description="Comprehensive legal solutions for businesses of all sizes, from startups to corporations."
+              title="Civil Law"
+              description=""
             />
             <PracticeAreaCard
               icon={<Gavel className="h-10 w-10" />}
-              title="Criminal Defense"
-              description="Aggressive defense strategies protecting your rights throughout the legal process."
+              title="Corporate and Commercial "
+              description=""
             />
             <PracticeAreaCard
               icon={<FileText className="h-10 w-10" />}
-              title="Estate Planning"
-              description="Secure your legacy and protect your loved ones with comprehensive estate planning."
+              title="Litigation and Dispute Resolution"
+              description=""
             />
             <PracticeAreaCard
               icon={<Shield className="h-10 w-10" />}
-              title="Personal Injury"
-              description="Dedicated advocacy for victims of negligence seeking fair compensation."
-            />
-            <PracticeAreaCard
-              icon={<Users className="h-10 w-10" />}
-              title="Immigration Law"
-              description="Navigating complex immigration processes with expertise and personal attention."
+              title="Legal Documentation and Advisory"
+              description=""
             />
           </div>
           <div className="mt-12 text-center">
             <Link
-              href="/practice-areas"
+              href="/what-we-do"
               className="inline-flex items-center text-lg font-medium text-primary hover:underline"
             >
               View All Practice Areas <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,12 +116,6 @@ function PracticeAreaCard({ icon, title, description }: { icon: React.ReactNode;
       <div className="mb-4 text-primary">{icon}</div>
       <h3 className="mb-2 text-xl font-bold">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
-      <Link
-        href={`/practice-areas#${title.toLowerCase().replace(/\s+/g, "-")}`}
-        className="mt-4 text-primary hover:underline"
-      >
-        Learn more
-      </Link>
     </div>
   )
 }

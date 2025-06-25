@@ -6,102 +6,85 @@ export default function AttorneysPage() {
   return (
     <div>
       <PageHeader
-        title="Our Attorneys"
+        title="Our Partners and Associates"
         description="Meet our team of experienced legal professionals dedicated to serving your needs."
       />
-
       <div className="container mx-auto px-4 py-16">
-        <p className="mx-auto mb-12 max-w-3xl text-center text-xl text-muted-foreground">
-          Our team of experienced attorneys is dedicated to providing exceptional legal representation across a wide
-          range of practice areas. Get to know the legal professionals who will be by your side.
-        </p>
+  <p className="mx-auto mb-12 max-w-7xl text-center text-xl text-muted-foreground">
+    Our team of experienced lawyers is dedicated to providing exceptional legal representation across a wide
+    range of practice areas. Get to know the legal professionals who will be by your side.
+  </p>
+    
+  {/* Partners Section */}
+  <div className="mb-16">
+    <h2 className="mb-8 text-center text-3xl font-bold">Partners</h2>
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <AttorneyCard
+        name="Manoj Kumar J Y "
+        title="Founding Partner"
+        image="/images/attorney-6.jpg"
+        specialties={["Family Law", "Estate Planning"]}
+        education={["LL.B., Punjab University Law College", "B.A., Karnataka University of Management Sciences"]}
+        barAdmissions={["Indian Bar Council", "Karnataka High Court Bar Association"]}
+        bio="Manoj Kumar J Y  has over 25 years of experience in family law and estate planning..."
+        email="fatima@justicelawfirm.pk"
+        phone="+92 300 123 4567"
+      />
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <AttorneyCard
-            name="Fatima Jinnah"
-            title="Founding Partner"
-            image="/images/attorney-1.jpg"
-            specialties={["Family Law", "Estate Planning"]}
-            education={["LL.B., Punjab University Law College", "B.A., Lahore University of Management Sciences"]}
-            barAdmissions={["Pakistan Bar Council", "Lahore High Court Bar Association"]}
-            bio="Fatima Jinnah has over 25 years of experience in family law and estate planning. As a founding partner of Vista Legal Firm, she has helped hundreds of clients navigate complex legal matters with compassion and expertise. Fatima is known for her strategic approach to negotiation and litigation, always focusing on achieving the best possible outcomes for her clients."
-            email="fatima@justicelawfirm.pk"
-            phone="+92 300 123 4567"
-          />
+      <AttorneyCard
+        name="Subhash. R"
+        title="Founding Partner"
+        image="/images/attorney-2.jpg"
+        specialties={["Corporate Law", "Intellectual Property"]}
+        education={[
+          "LL.M., Quaid-i-Azam University",
+          "MBA, Institute of Business Administration",
+          "B.Sc., FAST National University",
+        ]}
+        barAdmissions={[
+          "Indian Bar Council",
+          "Sindh High Court Bar Association",
+          "Intellectual Property Organization of Pakistan",
+        ]}
+        bio="Ahmed Khan brings a unique combination of legal expertise and business acumen..."
+        email="ahmed@justicelawfirm.pk"
+        phone="+92 300 123 4568"
+      />
+    </div>
+  </div>
 
-          <AttorneyCard
-            name="Ahmed Khan"
-            title="Founding Partner"
-            image="/images/attorney-2.jpg"
-            specialties={["Corporate Law", "Intellectual Property"]}
-            education={[
-              "LL.M., Quaid-i-Azam University",
-              "MBA, Institute of Business Administration",
-              "B.Sc., FAST National University",
-            ]}
-            barAdmissions={[
-              "Pakistan Bar Council",
-              "Sindh High Court Bar Association",
-              "Intellectual Property Organization of Pakistan",
-            ]}
-            bio="Ahmed Khan brings a unique combination of legal expertise and business acumen to his practice. With dual degrees in law and business, he provides strategic counsel to corporations of all sizes, from startups to multinational companies. Ahmed specializes in complex business transactions, intellectual property protection, and corporate governance matters."
-            email="ahmed@justicelawfirm.pk"
-            phone="+92 300 123 4568"
-          />
+  {/* Associates Section */}
+  <div>
+    <h2 className="mb-8 text-center text-3xl font-bold">Associates</h2>
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <AttorneyCard
+        name="Spandana. C. M
+"
+        title="Associate"
+        image="/images/attorney-3.jpg"
+        specialties={["Real Estate Law", "Business Litigation"]}
+        education={["LL.B., University of the Punjab", "B.A., National University of Sciences and Technology"]}
+        barAdmissions={["Indian Bar Council"]}
+        bio="Spandana. C. M focuses his practice on real estate transactions and business litigation..."
+        email="usman@justicelawfirm.pk"
+        phone="+92 300 123 4572"
+      />
 
-          <AttorneyCard
-            name="Zainab Malik"
-            title="Senior Partner"
-            image="/images/attorney-3.jpg"
-            specialties={["Criminal Defense", "Civil Rights"]}
-            education={["LL.B., Lahore University of Management Sciences", "B.A., Government College University"]}
-            barAdmissions={[
-              "Pakistan Bar Council",
-              "Islamabad High Court Bar Association",
-              "Supreme Court Bar Association of Pakistan",
-            ]}
-            bio="Zainab Malik is a formidable advocate with a passion for justice. Her practice focuses on criminal defense and civil rights litigation, where she has secured numerous acquittals and favorable settlements for her clients. Zainab's strategic thinking and thorough preparation make her a powerful presence in the courtroom. She is dedicated to protecting the constitutional rights of all individuals."
-            email="zainab@justicelawfirm.pk"
-            phone="+92 300 123 4569"
-          />
+      <AttorneyCard
+        name="Vandhana Jain"
+        title="Associate"
+        image="/images/attorney-1.jpg"
+        specialties={["Immigration Law", "Employment Law"]}
+        education={["LL.B., University of Karachi", "B.A., Aga Khan University"]}
+        barAdmissions={["Indian Bar Council", "Sindh Bar Council"]}
+        bio="Vandhana Jain specializes in immigration and employment law, helping individuals and families..."
+        email="imran@justicelawfirm.pk"
+        phone="+92 300 123 4570"
+      />
+    </div>
+  </div>
+</div>
 
-          <AttorneyCard
-            name="Imran Raza"
-            title="Partner"
-            image="/images/attorney-4.jpg"
-            specialties={["Immigration Law", "Employment Law"]}
-            education={["LL.B., University of Karachi", "B.A., Aga Khan University"]}
-            barAdmissions={["Pakistan Bar Council", "Sindh Bar Council"]}
-            bio="Imran Raza specializes in immigration and employment law, helping individuals and families navigate complex immigration processes and workplace issues. Fluent in Urdu, Punjabi, and English, Imran provides culturally sensitive representation to clients from diverse backgrounds. His deep understanding of immigration policy and employment regulations allows him to develop effective strategies for his clients."
-            email="imran@justicelawfirm.pk"
-            phone="+92 300 123 4570"
-          />
-
-          <AttorneyCard
-            name="Ayesha Mahmood"
-            title="Partner"
-            image="/images/attorney-5.jpg"
-            specialties={["Personal Injury", "Medical Malpractice"]}
-            education={["LL.B., International Islamic University", "B.Sc., King Edward Medical University"]}
-            barAdmissions={["Pakistan Bar Council", "Punjab Bar Council"]}
-            bio="Ayesha Mahmood is a skilled litigator who has recovered millions of rupees for victims of negligence and medical malpractice. Her background in medicine gives her a unique advantage in understanding complex medical issues and effectively communicating them to judges and juries. Ayesha is known for her compassionate approach to client representation and her tenacity in pursuing justice."
-            email="ayesha@justicelawfirm.pk"
-            phone="+92 300 123 4571"
-          />
-
-          <AttorneyCard
-            name="Usman Ali"
-            title="Associate"
-            image="/images/attorney-6.jpg"
-            specialties={["Real Estate Law", "Business Litigation"]}
-            education={["LL.B., University of the Punjab", "B.A., National University of Sciences and Technology"]}
-            barAdmissions={["Pakistan Bar Council"]}
-            bio="Usman Ali focuses his practice on real estate transactions and business litigation. He represents clients in property purchases and sales, lease negotiations, land use matters, and real estate disputes. Usman also handles a variety of business litigation cases, including contract disputes, partnership conflicts, and unfair competition claims. His analytical approach and attention to detail make him a valuable asset to the firm."
-            email="usman@justicelawfirm.pk"
-            phone="+92 300 123 4572"
-          />
-        </div>
-      </div>
     </div>
   )
 }

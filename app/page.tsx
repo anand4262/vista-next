@@ -1,6 +1,15 @@
 import type React from "react"
 import Link from "next/link"
-import { ArrowRight, Scale, Gavel, FileText, Building, Shield, Users, CheckCircle, BookOpen } from "lucide-react"
+import Image from "next/image"
+import {
+  ArrowRight,
+  Scale,
+  Gavel,
+  FileText,
+  Building,
+  Shield,
+  CheckCircle,
+} from "lucide-react"
 import TestimonialSlider from "@/components/testimonial-slider"
 import FaqAccordion from "@/components/faq-accordion"
 
@@ -26,10 +35,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Practice Areas Overview */}
+      {/* Practice Areas */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">Our Practice Areas</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            Our Practice Areas
+          </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <PracticeAreaCard
               icon={<Scale className="h-10 w-10" />}
@@ -43,7 +54,7 @@ export default function Home() {
             />
             <PracticeAreaCard
               icon={<Gavel className="h-10 w-10" />}
-              title="Corporate and Commercial "
+              title="Corporate and Commercial"
               description=""
             />
             <PracticeAreaCard
@@ -68,19 +79,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* About Section */}
+<section className="py-20 bg-muted/40">
+  <div className="container mx-auto px-6 sm:px-8 lg:px-12 grid gap-12 md:grid-cols-2 md:items-center">
+    <div>
+      <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">About Vista Legal</h2>
+      <p className="mb-4 text-muted-foreground">
+        Founded by experienced advocates Manoj Kumar J Y and Subhash R., Vista Legal is dedicated to delivering
+        strategic, ethical, and client-focused legal services across Bengaluru and Karnataka.
+      </p>
+      <p className="mb-6 text-muted-foreground">
+        With strong foundations in criminal and civil litigation, our firm combines legal expertise with empathy
+        to protect our clients’ rights and ensure justice.
+      </p>
+      <Link
+        href="/about"
+        className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
+      </Link>
+    </div>
+    <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
+      <Image
+        src="/images/team-meeting.jpg"
+        alt="Vista Legal team discussion"
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+  </div>
+</section>
+
+
+      {/* Testimonials */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">Client Testimonials</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            Client Testimonials
+          </h2>
           <TestimonialSlider />
         </div>
       </section>
 
-
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
+          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
           <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-muted-foreground">
             Find answers to common questions about our legal services and processes. If you don't see your question
             here, please don't hesitate to contact us.
@@ -91,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA */}
       <section className="bg-primary py-16 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Discuss Your Case?</h2>
@@ -110,48 +157,20 @@ export default function Home() {
   )
 }
 
-function PracticeAreaCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:shadow-md">
-      <div className="mb-4 text-primary">{icon}</div>
-      <h3 className="mb-2 text-xl font-bold">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
-    </div>
-  )
-}
-
-function CaseResultCard({ amount, category, description }: { amount: string; category: string; description: string }) {
-  return (
-    <div className="flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:shadow-md">
-      <div className="mb-2 flex items-center">
-        <CheckCircle className="mr-2 h-5 w-5 text-primary" />
-        <span className="text-sm font-medium text-muted-foreground">{category}</span>
-      </div>
-      <h3 className="mb-3 text-2xl font-bold text-primary">{amount}</h3>
-      <p className="text-muted-foreground">{description}</p>
-    </div>
-  )
-}
-
-function ResourceCard({
+function PracticeAreaCard({
   icon,
   title,
   description,
-  link,
 }: {
   icon: React.ReactNode
   title: string
   description: string
-  link: string
 }) {
   return (
     <div className="flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:shadow-md">
       <div className="mb-4 text-primary">{icon}</div>
       <h3 className="mb-2 text-xl font-bold">{title}</h3>
-      <p className="mb-4 text-muted-foreground">{description}</p>
-      <Link href={link} className="mt-auto inline-flex items-center text-primary hover:underline">
-        Read More <ArrowRight className="ml-1 h-4 w-4" />
-      </Link>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   )
 }

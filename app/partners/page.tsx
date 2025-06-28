@@ -20,9 +20,9 @@ export default function AttorneysPage() {
           <h2 className="mb-8 text-center text-3xl font-bold">Partners</h2>
           <div className="flex flex-wrap justify-center gap-8">
             <AttorneyCard
-              name="Manoj Kumar J Y"
+              name="Subhash R."
               title="Founding Partner"
-              image="/images/attorney-6.jpg"
+              image="/images/IMG_8729.jpg"
               specialties={["Family Law", "Estate Planning"]}
               education={["Ramaiah Law College (KSLU)"]}
               barAdmissions={["Karnataka Bar Council since 2021."]}
@@ -31,9 +31,9 @@ export default function AttorneysPage() {
               phone="+91 9686402901"
             />
             <AttorneyCard
-              name="Subhash R."
+              name="Manoj Kumar J Y"
               title="Founding Partner"
-              image="/images/attorney-2.jpg"
+              image="/images/IMG_8743.jpg"
               specialties={["Corporate Law", "Intellectual Property"]}
               education={["Ramaiah Law College (KSLU)"]}
               barAdmissions={["Karnataka Bar Council since 2021."]}
@@ -51,14 +51,14 @@ export default function AttorneysPage() {
             <AttorneyCard
               name="Spandana C. M"
               title="Associate"
-              image="/images/attorney-3.jpg"
+              image="/images/IMG_8686.jpg"
               bio="Spandana C. M focuses her practice on real estate transactions and business litigation."
               minimal
             />
             <AttorneyCard
               name="Vandhana Jain"
               title="Associate"
-              image="/images/attorney-1.jpg"
+              image="/images/IMG_8714.jpg"
               bio="Vandhana Jain specializes in immigration and employment law, helping individuals and families navigate legal complexities."
               minimal
             />

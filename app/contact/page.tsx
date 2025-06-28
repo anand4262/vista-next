@@ -1,16 +1,21 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import PageHeader from "@/components/page-header"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -51,7 +56,6 @@ export default function ContactPage() {
         from_website: window.location.hostname,
       }
 
-  
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -64,13 +68,10 @@ export default function ContactPage() {
       const data = await response.json()
 
       if (data.success) {
-       
         toast({
           title: "Message Sent Successfully",
           description: "Thank you for contacting us. We'll get back to you shortly.",
         })
-
-        
         setFormData({
           name: "",
           email: "",
@@ -80,7 +81,6 @@ export default function ContactPage() {
           message: "",
         })
       } else {
-      
         toast({
           title: "Error",
           description: data.message || "There was an error sending your message. Please try again.",
@@ -88,7 +88,6 @@ export default function ContactPage() {
         })
       }
     } catch (error) {
-      
       toast({
         title: "Error",
         description: "There was an error sending your message. Please try again.",
@@ -109,10 +108,9 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-2">
-          { }
+          {/* Contact Form */}
           <div className="rounded-lg border border-border bg-card p-8">
             <h2 className="mb-6 text-2xl font-bold">Send Us a Message</h2>
-
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
@@ -145,24 +143,22 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
                   <Input
-                      id="phone"
-                      name="phone"
-                      placeholder="+91"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      inputMode="numeric"
-                      onKeyDown={(e) => {
-                        const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"]
-                        const isControlKey = allowedKeys.includes(e.key)
-
-                        const isNumber = /^[0-9]$/.test(e.key)
-                        const isPlus = e.key === "+" && formData.phone.length === 0
-
-                        if (!isNumber && !isControlKey && !isPlus) {
-                          e.preventDefault()
-                        }
-                      }}
-                    />
+                    id="phone"
+                    name="phone"
+                    placeholder="+91"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    inputMode="numeric"
+                    onKeyDown={(e) => {
+                      const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"]
+                      const isControlKey = allowedKeys.includes(e.key)
+                      const isNumber = /^[0-9]$/.test(e.key)
+                      const isPlus = e.key === "+" && formData.phone.length === 0
+                      if (!isNumber && !isControlKey && !isPlus) {
+                        e.preventDefault()
+                      }
+                    }}
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -172,11 +168,17 @@ export default function ContactPage() {
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="criminal -law">Criminal Law</SelectItem>
+                      <SelectItem value="criminal-law">Criminal Law</SelectItem>
                       <SelectItem value="civil-law">Civil Law</SelectItem>
-                      <SelectItem value="corporate-and-commercial-law">Corporate and Commercial Law</SelectItem>
-                      <SelectItem value="litigation-and-dispute-resolution">Litigation and Dispute Resolution</SelectItem>
-                      <SelectItem value="legal-documentation-and-advisory:">Legal Documentation and Advisory</SelectItem>
+                      <SelectItem value="corporate-and-commercial-law">
+                        Corporate and Commercial Law
+                      </SelectItem>
+                      <SelectItem value="litigation-and-dispute-resolution">
+                        Litigation and Dispute Resolution
+                      </SelectItem>
+                      <SelectItem value="legal-documentation-and-advisory">
+                        Legal Documentation and Advisory
+                      </SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -218,34 +220,41 @@ export default function ContactPage() {
             </form>
           </div>
 
-          {}
+          {/* Contact Info and Map */}
           <div className="flex flex-col justify-between space-y-8">
             <div>
               <h2 className="mb-6 text-2xl font-bold">Our Contact Information</h2>
-
               <div className="space-y-6">
+                {/* Address */}
                 <div className="flex items-start">
                   <MapPin className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Office Address</h3>
-                    <p className="text-muted-foreground">Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,</p>
-                    <p className="text-muted-foreground">Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021</p>
+                    <p className="text-muted-foreground">
+                      Office No.4, 2nd Floor, Eshwari Complex, Dr Rajkumar Rd,
+                    </p>
+                    <p className="text-muted-foreground">
+                      Prakash Nagar, Rajajinagar, Bengaluru, Karnataka 560021
+                    </p>
                   </div>
                 </div>
 
-                                <div className="flex items-start">
+                {/* Phone */}
+                <div className="flex items-start">
                   <Phone className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <a
-                      href="tel:+918197741693"
-                      className="text-muted-foreground hover:underline"
-                    >
+                    <a href="tel:+918197741693" className="text-muted-foreground hover:underline">
                       +91 8197741693
+                    </a>
+                    <br />
+                    <a href="tel:+919686402901" className="text-muted-foreground hover:underline">
+                      +91 9686402901
                     </a>
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex items-start">
                   <Mail className="mr-4 h-6 w-6 text-primary" />
                   <div>
@@ -258,10 +267,39 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
+
+                {/* Social Media */}
+                <div className="flex items-start">
+                  <Instagram className="mr-4 h-6 w-6 text-primary" />
+                  <div>
+                    <h3 className="font-semibold">Social Media</h3>
+                    <div className="flex space-x-4 mt-1">
+                      <a
+                        href="https://www.linkedin.com/company/vistalegal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:bg-primary hover:text-white"
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/vistalegal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:bg-primary hover:text-white"
+                      >
+                        <Instagram className="h-5 w-5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-{/* Map */}
-          <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border">
+
+            {/* Map */}
+            <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.716481988701!2d77.55614797507675!3d12.98997698732703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d0001721367%3A0x4094641fd1b46226!2sVista%20Legal!5e0!3m2!1sen!2sin!4v1750495432459!5m2!1sen!2sin"
                 width="100%"

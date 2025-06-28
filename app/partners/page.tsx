@@ -51,14 +51,14 @@ export default function AttorneysPage() {
             <AttorneyCard
               name="Spandana C. M"
               title="Associate"
-              image="/images/IMG_8686.jpg"
+              image="/images/IMG_8714.jpg"
               bio="Spandana C. M focuses her practice on real estate transactions and business litigation."
               minimal
             />
             <AttorneyCard
               name="Vandhana Jain"
               title="Associate"
-              image="/images/IMG_8714.jpg"
+              image="/images/IMG_8686.jpg"
               bio="Vandhana Jain specializes in immigration and employment law, helping individuals and families navigate legal complexities."
               minimal
             />

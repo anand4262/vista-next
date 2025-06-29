@@ -14,6 +14,7 @@ import {
   Shield,
   BadgeCheck
 } from "lucide-react"
+import WhatsappButton from "@/components/WhatsappButton"
 
 const courts = [
   { name: "The High Court of Karnataka, Bengaluru", icon: Landmark },
@@ -56,6 +57,8 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

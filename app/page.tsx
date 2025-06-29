@@ -11,6 +11,7 @@ import {
 } from "lucide-react"
 import TestimonialSlider from "@/components/testimonial-slider"
 import FaqAccordion from "@/components/faq-accordion"
+import WhatsappButton from "@/components/WhatsappButton"
 
 export default function Home() {
   return (
@@ -108,7 +109,6 @@ export default function Home() {
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
             Client Testimonials
           </h2>
-          {/* Updated component supports autoplay, carousel, and optional visual cues */}
           <TestimonialSlider />
         </div>
       </section>
@@ -134,7 +134,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Discuss Your Case?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Our team of experienced attorneys is ready to help you navigate your legal challenges.
+            Our team of experienced lawyers is ready to help you navigate your legal challenges.
           </p>
           <Link
             href="/contact"
@@ -144,6 +144,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* WhatsApp Floating Button */}
+      <WhatsappButton />
     </div>
   )
 }

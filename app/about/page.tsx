@@ -3,6 +3,7 @@
 import Image from "next/image"
 import PageHeader from "@/components/page-header"
 import { useMemo } from "react"
+import WhatsappButton from "@/components/WhatsappButton"
 
 export default function AboutPage() {
   const events = useMemo(() => [
@@ -111,6 +112,8 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

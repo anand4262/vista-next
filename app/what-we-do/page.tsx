@@ -7,6 +7,7 @@ import {
   Shield
 } from "lucide-react"
 import PageHeader from "@/components/page-header"
+import WhatsappButton from "@/components/WhatsappButton"
 
 export default function PracticeAreasPage() {
   return (
@@ -86,6 +87,8 @@ function PracticeAreaCard({
       </div>
       <h3 className="mb-2 text-xl font-semibold">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import WhatsappButton from "@/components/WhatsappButton"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -314,6 +315,8 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

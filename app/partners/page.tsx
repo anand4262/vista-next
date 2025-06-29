@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Mail, Phone } from "lucide-react"
 import PageHeader from "@/components/page-header"
+import WhatsappButton from "@/components/WhatsappButton"
 
-export default function AttorneysPage() {
+export default function LawyersPage() {
   return (
     <div>
       <PageHeader
@@ -19,7 +20,7 @@ export default function AttorneysPage() {
         <div className="mb-16">
           <h2 className="mb-8 text-center text-3xl font-bold">Partners</h2>
           <div className="flex flex-wrap justify-center gap-8">
-            <AttorneyCard
+            <LawyerCard
               name="Subhash R."
               title="Founding Partner"
               image="/images/IMG_8729.jpg"
@@ -30,7 +31,7 @@ export default function AttorneysPage() {
               email="manoj@vistalegal.in"
               phone="+91 9686402901"
             />
-            <AttorneyCard
+            <LawyerCard
               name="Manoj Kumar J Y"
               title="Founding Partner"
               image="/images/IMG_8743.jpg"
@@ -48,14 +49,14 @@ export default function AttorneysPage() {
         <div>
           <h2 className="mb-8 text-center text-3xl font-bold">Associates</h2>
           <div className="flex flex-wrap justify-center gap-8">
-            <AttorneyCard
+            <LawyerCard
               name="Spandana C. M"
               title="Associate"
               image="/images/IMG_8714.jpg"
               bio="Spandana C. M focuses her practice on real estate transactions and business litigation."
               minimal
             />
-            <AttorneyCard
+            <LawyerCard
               name="Vandhana Jain"
               title="Associate"
               image="/images/IMG_8686.jpg"
@@ -69,7 +70,7 @@ export default function AttorneysPage() {
   )
 }
 
-function AttorneyCard({
+function LawyerCard({
   name,
   title,
   image,
@@ -162,6 +163,8 @@ function AttorneyCard({
           </div>
         )}
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

@@ -23,7 +23,7 @@ export default function LawyersPage() {
             <LawyerCard
               name="Subhash R."
               title="Founding Partner"
-              image="/images/IMG_8729.jpg"
+              image="/images/IMG_8664.jpg"
               specialties={["Family Law", "Estate Planning"]}
               education={["Ramaiah Law College (KSLU)"]}
               barAdmissions={["Karnataka Bar Council since 2021."]}
@@ -34,7 +34,7 @@ export default function LawyersPage() {
             <LawyerCard
               name="Manoj Kumar J Y"
               title="Founding Partner"
-              image="/images/IMG_8743.jpg"
+              image="/images/IMG_8735.jpg"
               specialties={["Corporate Law", "Intellectual Property"]}
               education={["Ramaiah Law College (KSLU)"]}
               barAdmissions={["Karnataka Bar Council since 2021."]}

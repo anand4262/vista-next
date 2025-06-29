@@ -74,7 +74,9 @@ export default function TestimonialSlider() {
   useEffect(() => {
     let interval: NodeJS.Timeout
     if (isAutoPlaying) {
-      interval = setInterval(nextSlide, 6000)
+      interval = setInterval(() => {
+        nextSlide()
+      }, 6000)
     }
     return () => clearInterval(interval)
   }, [isAutoPlaying, currentIndex])
@@ -88,17 +90,15 @@ export default function TestimonialSlider() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="min-h-[320px] sm:min-h-[280px] relative">
+      <div className="relative min-h-[400px]">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
-            className={`transition-all duration-500 ease-in-out ${
-              index === currentIndex
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-4 pointer-events-none absolute top-0 left-0 w-full"
+            className={`absolute left-0 top-0 w-full transition-opacity duration-500 ${
+              index === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="mb-4 flex justify-center">
+            <div className="flex justify-center mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
@@ -108,11 +108,9 @@ export default function TestimonialSlider() {
                 />
               ))}
             </div>
-
-            <blockquote className="mb-6 text-lg sm:text-xl italic text-muted-foreground text-center">
+            <blockquote className="mb-6 text-lg sm:text-xl italic text-muted-foreground text-center px-2">
               “{testimonial.quote}”
             </blockquote>
-
             <div className="text-center">
               <p className="text-lg font-semibold">{testimonial.name}</p>
               <p className="text-muted-foreground text-sm">{testimonial.position}</p>
@@ -121,6 +119,7 @@ export default function TestimonialSlider() {
         ))}
       </div>
 
+      {/* Controls (fixed) */}
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <Button variant="outline" size="icon" onClick={prevSlide} aria-label="Previous testimonial">
           <ChevronLeft className="h-5 w-5" />

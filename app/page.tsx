@@ -15,6 +15,8 @@ import {
 import TestimonialSlider from "@/components/testimonial-slider"
 import FaqAccordion from "@/components/faq-accordion"
 import WhatsappButton from "@/components/WhatsappButton"
+import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -96,7 +98,7 @@ export default function Home() {
           </div>
           <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
             <Image
-              src="/images/team-meeting.jpg"
+              src="/images/gallery/IMG_8797.jpg"
               alt="Vista Legal team discussion"
               fill
               className="object-cover"

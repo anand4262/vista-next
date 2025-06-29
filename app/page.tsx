@@ -1,6 +1,9 @@
+"use client"
+
 import type React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 import {
   ArrowRight,
   Scale,
@@ -103,13 +106,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <GallerySection />
+
       {/* Testimonials Section */}
       <section className="bg-muted/40 py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
             Client Testimonials
           </h2>
-          <TestimonialSlider />
+          <div className="max-w-4xl mx-auto">
+            <TestimonialSlider />
+          </div>
         </div>
       </section>
 
@@ -145,8 +153,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WhatsApp Floating Button */}
       <WhatsappButton />
     </div>
+  )
+}
+
+// Gallery Section Component
+function GallerySection() {
+  const images = [
+    "/images/gallery/IMG_8657.jpg",
+    "/images/gallery/IMG_8553.jpg",
+    "/images/gallery/IMG_8561.jpg",
+  ]
+
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length)
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [images.length])
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev + 1) % images.length)
+  }
+
+  return (
+    <section className="py-16 bg-muted/40">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl">
+          Life at Vista Legal
+        </h2>
+        <div className="relative mx-auto h-[400px] w-full max-w-5xl overflow-hidden rounded-lg shadow-lg bg-white">
+          <Image
+            src={images[current]}
+            alt={`Gallery image ${current + 1}`}
+            fill
+            className="object-contain transition-opacity duration-700"
+            priority
+          />
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-1 text-xl font-bold shadow hover:bg-white"
+          >
+            ‹
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-1 text-xl font-bold shadow hover:bg-white"
+          >
+            ›
+          </button>
+        </div>
+        <div className="mt-4 text-muted-foreground text-sm">
+          {current + 1} / {images.length}
+        </div>
+      </div>
+    </section>
   )
 }

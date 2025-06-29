@@ -62,6 +62,9 @@ export default function PracticeAreasPage() {
           </p>
         </div>
       </div>
+
+      {/* WhatsApp Floating Button (render only once) */}
+      <WhatsappButton />
     </div>
   )
 }
@@ -87,8 +90,6 @@ function PracticeAreaCard({
       </div>
       <h3 className="mb-2 text-xl font-semibold">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-      {/* WhatsApp Floating Button */}
-            <WhatsappButton />
     </div>
   )
 }

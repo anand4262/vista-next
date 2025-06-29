@@ -52,7 +52,7 @@ export default function LawyersPage() {
             <LawyerCard
               name="Spandana C. M"
               title="Associate"
-              image="/images/IMG_8714.jpg"
+              image="/images/IMG_8715.jpg"
               bio="Spandana C. M focuses her practice on real estate transactions and business litigation."
               minimal
             />

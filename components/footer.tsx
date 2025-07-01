@@ -1,12 +1,11 @@
 import type React from "react"
 import Link from "next/link"
-import { Scale, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react"
+import { Scale, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="border-t bg-muted">
       <div className="container px-4 py-12 md:py-16">
-        
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           {/* Left Section */}
           <div className="lg:w-2/5">
@@ -18,7 +17,16 @@ export default function Footer() {
               Dedicated legal professionals committed to protecting your rights and securing your future.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="https://twitter.com" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
+              <SocialLink
+                href="https://www.linkedin.com/company/vistalegal"
+                icon={<Linkedin className="h-5 w-5" />}
+                label="LinkedIn"
+              />
+              <SocialLink
+                href="https://www.instagram.com/vistalegal"
+                icon={<Instagram className="h-5 w-5" />}
+                label="Instagram"
+              />
             </div>
           </div>
 
@@ -30,7 +38,7 @@ export default function Footer() {
                 <FooterLink href="/">Home</FooterLink>
                 <FooterLink href="/about">About Us</FooterLink>
                 <FooterLink href="/what-we-do">What We Do</FooterLink>
-                <FooterLink href="/attorneys">Our Attorneys</FooterLink>
+                <FooterLink href="/partners">Partners</FooterLink>
                 <FooterLink href="/contact">Contact Us</FooterLink>
               </ul>
             </div>
@@ -48,9 +56,8 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center">
                   <Phone className="mr-2 h-5 w-5 text-primary" />
-                  <a href="tel:+91 8197741693" className="text-muted-foreground hover:text-primary">
-                    +91 8197741693
-                  </a>
+                  <a href="tel:+91 8197741693" className="text-muted-foreground hover:text-primary">+91 8197741693</a>,{" "}
+                  <a href="tel:+919686402901" className="text-muted-foreground hover:text-primary">+91 9686402901</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="mr-2 h-5 w-5 text-primary" />
@@ -62,7 +69,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
 
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">

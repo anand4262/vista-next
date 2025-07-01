@@ -73,25 +73,16 @@ export default function TestimonialSlider() {
 
   useEffect(() => {
     let interval: NodeJS.Timeout
-
     if (isAutoPlaying) {
       interval = setInterval(() => {
         nextSlide()
-      }, 5000)
+      }, 6000)
     }
-
-    return () => {
-      if (interval) clearInterval(interval)
-    }
+    return () => clearInterval(interval)
   }, [isAutoPlaying, currentIndex])
 
-  const handleMouseEnter = () => {
-    setIsAutoPlaying(false)
-  }
-
-  const handleMouseLeave = () => {
-    setIsAutoPlaying(true)
-  }
+  const handleMouseEnter = () => setIsAutoPlaying(false)
+  const handleMouseLeave = () => setIsAutoPlaying(true)
 
   return (
     <div
@@ -99,7 +90,7 @@ export default function TestimonialSlider() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative min-h-[250px]">
+      <div className="relative min-h-[400px]">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
@@ -107,26 +98,29 @@ export default function TestimonialSlider() {
               index === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="mb-4 flex">
+            <div className="flex justify-center mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
-                  className={`h-5 w-5 ${i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                  className={`h-5 w-5 ${
+                    i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"
+                  }`}
                 />
               ))}
             </div>
-
-            <blockquote className="mb-6 text-xl italic text-muted-foreground">"{testimonial.quote}"</blockquote>
-
-            <div>
+            <blockquote className="mb-6 text-lg sm:text-xl italic text-muted-foreground text-center px-2">
+              “{testimonial.quote}”
+            </blockquote>
+            <div className="text-center">
               <p className="text-lg font-semibold">{testimonial.name}</p>
-              <p className="text-muted-foreground">{testimonial.position}</p>
+              <p className="text-muted-foreground text-sm">{testimonial.position}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 flex items-center justify-between">
+      {/* Controls (fixed) */}
+      <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <Button variant="outline" size="icon" onClick={prevSlide} aria-label="Previous testimonial">
           <ChevronLeft className="h-5 w-5" />
         </Button>

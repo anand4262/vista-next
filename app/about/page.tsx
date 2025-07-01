@@ -1,12 +1,37 @@
+"use client"
+
 import Image from "next/image"
 import PageHeader from "@/components/page-header"
+import { useMemo } from "react"
+import WhatsappButton from "@/components/WhatsappButton"
 
 export default function AboutPage() {
+  const events = useMemo(() => [
+    {
+      title: "Founded in 2024",
+      description:
+        "Vista Legal was established by Advocates Manoj Kumar J Y and Subhash R. after graduating from Ramaiah Law College and registering with the Karnataka Bar Council in 2021."
+    },
+    {
+      title: "Rooted in Criminal Litigation",
+      description:
+        "Built a strong foundation under the mentorship of senior advocates like S. Balan, focusing on precision and courtroom advocacy."
+    },
+    {
+      title: "Expanded into Civil & Corporate Law",
+      description:
+        "Gained hands-on experience under Advocate Harish H V, diversifying practice areas and gaining insight into litigation and advisory work."
+    },
+    {
+      title: "Vista Legal Today",
+      description:
+        "Now based in Bengaluru, Vista Legal offers comprehensive legal services across courts and tribunals including High Court, Civil & Magistrate Courts, KAT, RERA, and more."
+    }
+  ], [])
+
   return (
     <div>
-      <PageHeader
-        title="About Our Firm"
-      />
+      <PageHeader title="About Our Firm" />
 
       <div className="container mx-auto px-4 py-16">
         {/* Our Mission Section */}
@@ -49,40 +74,46 @@ export default function AboutPage() {
           <div>
             <h2 className="mb-4 text-2xl font-bold">Our Vision</h2>
             <p className="mb-4 text-muted-foreground">
-              To be recognized as one of Karnataka’s most trusted and forward-thinking law firms—renowned for ethical practice, 
-              courtroom excellence, and strategic legal advisory. At Vista Legal, our vision is to redefine the client experience 
-              by combining deep legal knowledge with innovation, empathy, and unwavering commitment to justice. 
-              We aim to build lasting relationships that extend beyond the case, empowering clients with clarity, confidence, 
+              To be recognized as one of Karnataka’s most trusted and forward-thinking law firms—renowned for ethical practice,
+              courtroom excellence, and strategic legal advisory. At Vista Legal, our vision is to redefine the client experience
+              by combining deep legal knowledge with innovation, empathy, and unwavering commitment to justice.
+              We aim to build lasting relationships that extend beyond the case, empowering clients with clarity, confidence,
               and reliable representation.
             </p>
           </div>
         </div>
 
-        {/* Firm Background and Founders */}
-        <div className="w-[75%] mx-auto mb-16">
-          <p className="mb-4 text-muted-foreground">
-            A commitment to legal excellence, ethical practices, and personalized client service drives Vista Legal. 
-            Founded in January 2024 by Advocates Manoj Kumar J Y and Subhash R., who graduated from Ramaiah Law College (KSLU) 
-            and have been registered members of the Karnataka Bar Council since 2021, the firm was established with a shared 
-            vision to provide comprehensive, transparent, and strategic legal services to individuals, businesses, and institutions.
-          </p>
-          <p className="mb-4 text-muted-foreground">
-            Our journey began with a strong foundation in criminal litigation under the mentorship of S. Balan and other advocates, 
-            where we learned the importance of precision, thorough preparation, and effective courtroom advocacy. This foundation 
-            was further enhanced by extensive experience in civil and corporate law under Advocate Harish H V, helping us develop 
-            a well-rounded understanding of both litigation and advisory aspects of the legal system.
-          </p>
-          <p className="mb-4 text-muted-foreground">
-            Located in the heart of Bengaluru, Vista Legal offers a wide range of services, including criminal law, civil litigation, 
-            corporate and commercial advisory, dispute resolution, and legal documentation. We represent clients before various forums, 
-            including the High Court of Karnataka, civil and magistrate courts, family courts, consumer forums, KAT, RERA, and more.
-          </p>
-          <p className="text-muted-foreground">
-            At Vista Legal, we are more than just your legal representatives; we are your partners in the pursuit of justice. 
-            We believe in building lasting relationships based on trust, transparency, and effective results.
-          </p>
+        {/* Quote Section */}
+        <div className="mb-20 text-center">
+          <blockquote className="mx-auto max-w-3xl text-xl font-medium italic text-muted-foreground">
+            “Vista Legal offers a wide range of professional legal services with a commitment to excellence, integrity,
+            and client-focused solutions.”
+          </blockquote>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="mb-24">
+          <h2 className="mb-10 text-center text-2xl font-bold">Our Journey</h2>
+          <div className="relative mx-auto max-w-4xl before:absolute before:left-1/2 before:top-0 before:h-full before:w-1 before:-translate-x-1/2 before:bg-primary/50">
+            {events.map((event, i) => (
+              <div
+                key={i}
+                className={`relative mb-12 flex w-full items-start ${
+                  i % 2 === 0 ? 'justify-start pr-10' : 'justify-end pl-10'
+                }`}
+              >
+                <div className="absolute left-1/2 top-2 h-4 w-4 -translate-x-1/2 rounded-full bg-primary shadow-md"></div>
+                <div className="w-1/2 rounded-lg border bg-card p-6 shadow-lg">
+                  <h4 className="mb-2 text-lg font-semibold">{event.title}</h4>
+                  <p className="text-muted-foreground">{event.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

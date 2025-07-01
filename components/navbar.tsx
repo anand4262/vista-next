@@ -74,15 +74,14 @@ export default function Navbar() {
                   <MobileNavLink href="/about" active={isActive("/about")}>
                     About
                   </MobileNavLink>
-
-                   <MobileNavLink href="/attorneys" active={isActive("/attorneys")}>
-                    Attorneys
+                  <MobileNavLink href="/what-we-do" active={isActive("/what-we-do")}>
+                    What We Do
+                  </MobileNavLink>
+                   <MobileNavLink href="/partners" active={isActive("/partners")}>
+                    Partners
                   </MobileNavLink>
                    <MobileNavLink href="/services" active={isActive("/services")}>
                     Services
-                  </MobileNavLink>
-                  <MobileNavLink href="/what-we-do" active={isActive("/what-we-do")}>
-                    What We Do
                   </MobileNavLink>
                  
                 </div>

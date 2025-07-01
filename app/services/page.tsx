@@ -1,71 +1,64 @@
 import Image from "next/image"
 import PageHeader from "@/components/page-header"
-import { Gavel, Scale, Landmark, ShieldCheck } from "lucide-react"
+import {
+  Landmark,
+  Gavel,
+  Scale3D,
+  Users2,
+  Briefcase,
+  PackageCheck,
+  Handshake,
+  ScrollText,
+  BookOpenCheck,
+  Home,
+  Shield,
+  BadgeCheck
+} from "lucide-react"
+import WhatsappButton from "@/components/WhatsappButton"
 
 const courts = [
-  {
-    name: "Supreme Court of India",
-    icon: Landmark,
-  },
-  {
-    name: "Delhi High Court",
-    icon: Gavel,
-  },
-  {
-    name: "Bombay High Court",
-    icon: Scale,
-  },
-  {
-    name: "Karnataka High Court",
-    icon: ShieldCheck,
-  },
-  {
-    name: "Madras High Court",
-    icon: Landmark,
-  },
-  {
-    name: "District & Session Courts",
-    icon: Gavel,
-  },
-  {
-    name: "Family Courts",
-    icon: Scale,
-  },
-  {
-    name: "Consumer Forums & Tribunals",
-    icon: ShieldCheck,
-  },
+  { name: "The High Court of Karnataka, Bengaluru", icon: Landmark },
+  { name: "The City Civil Courts, Bengaluru", icon: Scale3D },
+  { name: "The Magistrate Courts, Bengaluru", icon: Gavel },
+  { name: "The Family Courts, Bengaluru", icon: Users2 },
+  { name: "The Commercial Courts, Bengaluru", icon: Briefcase },
+  { name: "The Consumer Disputes Redressal Forums, Bengaluru", icon: PackageCheck },
+  { name: "The Arbitration and Conciliation Centre, Bengaluru", icon: Handshake },
+  { name: "Karnataka Administrative Tribunal (KAT)", icon: ScrollText },
+  { name: "Karnataka Appellate Tribunal (KAT)", icon: BookOpenCheck },
+  { name: "Real Estate Regulatory Authority (RERA)", icon: Home },
+  { name: "The Deputy Commissioner Court, Bengaluru", icon: Shield },
+  { name: "The Assistant Commissioner Court, Bengaluru", icon: BadgeCheck }
 ]
 
 export default function ServicesPage() {
   return (
     <div>
-      <PageHeader
-        title="Courts We Practice In"
-        description="Our firm represents clients in various judicial and quasi-judicial forums across India."
-      />
+      <PageHeader title="Courts We Practice In" />
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-20">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight">Courts We Practice In</h2>
+        </div>
+
+        {/* Grid of Courts */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {courts.map(({ name, icon: Icon }, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center rounded-xl border bg-white p-6 text-center shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-lg"
+              className="group flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-primary dark:border-gray-700 dark:bg-gray-900"
             >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white transition-transform group-hover:scale-110">
                 <Icon className="h-7 w-7" />
               </div>
               <h3 className="text-lg font-semibold">{name}</h3>
             </div>
           ))}
         </div>
-
-        <div className="mt-16 text-center text-muted-foreground">
-          <p>
-            Whether it’s a constitutional matter in the Supreme Court or a family dispute in a district court, our legal team is equipped to represent you at every level of the Indian judiciary.
-          </p>
-        </div>
       </div>
+      {/* WhatsApp Floating Button */}
+            <WhatsappButton />
     </div>
   )
 }

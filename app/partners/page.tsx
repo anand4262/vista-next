@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Mail, Phone } from "lucide-react"
 import PageHeader from "@/components/page-header"
+import WhatsappButton from "@/components/WhatsappButton"
 
-export default function AttorneysPage() {
+export default function LawyersPage() {
   return (
     <div>
       <PageHeader
@@ -19,27 +20,25 @@ export default function AttorneysPage() {
         <div className="mb-16">
           <h2 className="mb-8 text-center text-3xl font-bold">Partners</h2>
           <div className="flex flex-wrap justify-center gap-8">
-            <AttorneyCard
-              name="Manoj Kumar J Y"
-              title="Founding Partner"
-              image="/images/attorney-6.jpg"
-              specialties={["Family Law", "Estate Planning"]}
-              education={["Ramaiah Law College (KSLU)"]}
-              barAdmissions={["Karnataka Bar Council since 2021."]}
-              bio="Manoj Kumar J Y is a founding partner of Vista Legal and specializes in family law and estate planning."
-              email="manoj@vistalegal.in"
-              phone="+91 9686402901"
-            />
-            <AttorneyCard
+            <LawyerCard
               name="Subhash R."
               title="Founding Partner"
-              image="/images/attorney-2.jpg"
-              specialties={["Corporate Law", "Intellectual Property"]}
-              education={["Ramaiah Law College (KSLU)"]}
-              barAdmissions={["Karnataka Bar Council since 2021."]}
-              bio="Subhash R. co-founded Vista Legal with a focus on corporate advisory and intellectual property law."
-              email="subhash@vistalegal.in"
+              image="/images/IMG_8664.jpg"
+              education={["M. S. Ramaiah College of Law (KSLU), Class of 2020"]}
+              barAdmissions={["Enrolled with Karnataka State Bar Council since 2021"]}
+              bio="Mr. Subhash R. earned his law degree from M. S. Ramaiah College of Law, affiliated with Karnataka State Law University, graduating in 2020. He was subsequently enrolled as an advocate with the Karnataka State Bar Council in 2021. As a first-generation advocate, Mr. Subhash R. entered the legal profession with a strong interest in criminal law. He is currently focusing his practice in this area, with a growing interest in trial work and procedural aspects of criminal litigation. Eager to learn and build his presence in the legal field, Mr. Subhash is committed to developing his expertise through consistent practice, courtroom exposure, and continuous learning. He aspires to contribute meaningfully to the legal profession and serve clients with diligence and integrity."
+              email="advocatesubhashr@gmail.com"
               phone="+91 8197741693"
+            />
+            <LawyerCard
+              name="Manoj Kumar J Y"
+              title="Founding Partner"
+              image="/images/IMG_8735.jpg"
+              education={["M. S. Ramaiah College of Law (KSLU), 2015–2020"]}
+              barAdmissions={["Enrolled with Karnataka State Bar Council since 2021"]}
+              bio="Mr. Manoj Kumar J. Y completed his law degree from M. S. Ramaiah College of Law, affiliated to Karnataka State Law University, during the period 2015–2020. He was enrolled with the Karnataka State Bar Council in 2021. Coming from a family with a strong legal background, Mr. Manoj Kumar developed an early interest in the field of law. Over the years, he has gained experience in both civil and criminal litigation. He began his practice focusing on criminal matters and later expanded into civil, commercial, and property-related cases. He has also handled matters involving arbitration and corporate disputes. Known for his practical approach and client-focused solutions, Mr. Manoj Kumar continues to build a strong and diverse legal practice, representing both individuals and businesses."
+              email="advmanojkumarjy@gmail.com"
+              phone="+91 9686402901"
             />
           </div>
         </div>
@@ -48,18 +47,25 @@ export default function AttorneysPage() {
         <div>
           <h2 className="mb-8 text-center text-3xl font-bold">Associates</h2>
           <div className="flex flex-wrap justify-center gap-8">
-            <AttorneyCard
+            <LawyerCard
               name="Spandana C. M"
               title="Associate"
-              image="/images/attorney-3.jpg"
-              bio="Spandana C. M focuses her practice on real estate transactions and business litigation."
+              image="/images/IMG_8715.jpg"
+              education={["K.L.E. College of Law (KSLU), Class of 2022"]}
+              barAdmissions={["Enrolled with Karnataka State Bar Council in 2022"]}
+              bio="Spandana C.M. completed her legal education at K.L.E. College of Law, affiliated with Karnataka State Law University, graduating in 2022. She was enrolled with the Karnataka State Bar Council in the same year. She is currently working as an Associate at Vista Legal, actively assisting in civil, criminal, and family law matters. With a growing interest in trial advocacy and procedure, she continues to gain valuable courtroom experience. Recognized for her calm and diplomatic approach, Spandana combines negotiation skills with a problem-solving mindset. Committed to continuous learning, she strives to contribute effectively to every matter she handles."
               minimal
             />
-            <AttorneyCard
+            <LawyerCard
               name="Vandhana Jain"
               title="Associate"
-              image="/images/attorney-1.jpg"
-              bio="Vandhana Jain specializes in immigration and employment law, helping individuals and families navigate legal complexities."
+              image="/images/IMG_8686.jpg"
+              education={[
+                "Christ University, Bachelors in Finance and Accountancy (2019)",
+                "BMS College of Law (KSLU), Class of 2024",
+              ]}
+              barAdmissions={["Practicing in all forums across Karnataka"]}
+              bio="Vandana Jain is currently an Associate with Vista Legal. She is an advocate whose practice ranges across all forums in the State of Karnataka. Miss Jain completed her bachelors in finance and accountancy from Christ University in 2019 and earned her law degree from BMS College of Law affiliated to Karnataka State Law University, Hubli in 2024. A proud first generation litigator, Miss Jain enjoys untangling the fabric of civil litigation. Eager to build her expertise, Miss Jain is a pro-active and result oriented performer with a special interest towards inheritance, land and family law."
               minimal
             />
           </div>
@@ -69,11 +75,10 @@ export default function AttorneysPage() {
   )
 }
 
-function AttorneyCard({
+function LawyerCard({
   name,
   title,
   image,
-  specialties,
   education,
   barAdmissions,
   bio,
@@ -84,7 +89,6 @@ function AttorneyCard({
   name: string
   title: string
   image: string
-  specialties?: string[]
   education?: string[]
   barAdmissions?: string[]
   bio: string
@@ -107,22 +111,8 @@ function AttorneyCard({
       <div className="flex flex-1 flex-col p-6">
         <h2 className="mb-1 text-2xl font-bold">{name}</h2>
         <p className="mb-4 text-primary">{title}</p>
-        <p className="mb-4 text-muted-foreground">{bio}</p>
 
-        {!minimal && specialties && specialties.length > 0 && (
-          <div className="mb-4">
-            <h3 className="mb-2 text-lg font-semibold">Areas of Practice</h3>
-            <div className="flex flex-wrap gap-2">
-              {specialties.map((specialty, index) => (
-                <span key={index} className="rounded-full bg-muted px-3 py-1 text-sm">
-                  {specialty}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {!minimal && education && education.length > 0 && (
+        {education && education.length > 0 && (
           <div className="mb-4">
             <h3 className="mb-2 text-lg font-semibold">Education</h3>
             <ul className="list-inside list-disc text-muted-foreground">
@@ -133,7 +123,7 @@ function AttorneyCard({
           </div>
         )}
 
-        {!minimal && barAdmissions && barAdmissions.length > 0 && (
+        {barAdmissions && barAdmissions.length > 0 && (
           <div className="mb-4">
             <h3 className="mb-2 text-lg font-semibold">Bar Admissions</h3>
             <ul className="list-inside list-disc text-muted-foreground">
@@ -145,7 +135,7 @@ function AttorneyCard({
         )}
 
         {!minimal && (email || phone) && (
-          <div className="mt-auto">
+          <div className="mb-4">
             <h3 className="mb-2 text-lg font-semibold">Contact Information</h3>
             <div className="flex flex-col space-y-2 text-muted-foreground">
               {email && (
@@ -161,7 +151,10 @@ function AttorneyCard({
             </div>
           </div>
         )}
+
+        <p className="text-muted-foreground">{bio}</p>
       </div>
+      <WhatsappButton />
     </div>
   )
 }

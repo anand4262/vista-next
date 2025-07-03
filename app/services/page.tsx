@@ -34,7 +34,10 @@ const courts = [
 export default function ServicesPage() {
   return (
     <div>
-      <PageHeader title="Courts We Practice In" />
+      <PageHeader 
+      title="Courts We Practice In" 
+        description="Discover the range of courts and tribunals where our legal team actively represents clients across Karnataka."
+      />
 
       <div className="container mx-auto px-4 py-20">
         {/* Section Title */}

@@ -31,7 +31,9 @@ export default function AboutPage() {
 
   return (
     <div>
-      <PageHeader title="About Our Firm" />
+      <PageHeader title="About Our Firm" 
+        description="Learn about Vista Legal’s mission, values, and the dedicated professionals behind our client-centered legal practice."
+      />
 
       <div className="container mx-auto px-4 py-16">
         {/* Our Mission Section */}

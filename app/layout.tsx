@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
 import { headers } from "next/headers"
+import PopupGate from "@/components/PopupGate"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -34,6 +35,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <PopupGate>
         {isDisclaimerPage ? (
           <>{children}</>
         ) : (
@@ -44,6 +46,7 @@ export default async function RootLayout({
             <ScrollToTop />
           </div>
         )}
+        </PopupGate>
       </body>
     </html>
   )

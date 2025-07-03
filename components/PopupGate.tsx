@@ -1,0 +1,44 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
+export default function PopupGate({ children }: { children: React.ReactNode }) {
+  const [accepted, setAccepted] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const hasAccepted = localStorage.getItem("popupAccepted")
+    if (hasAccepted === "true") {
+      setAccepted(true)
+    }
+    setLoading(false)
+  }, [])
+
+  const handleAccept = () => {
+    localStorage.setItem("popupAccepted", "true")
+    setAccepted(true)
+  }
+
+  if (loading) return null
+
+  if (!accepted) {
+    return (
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-center">
+          <h2 className="text-xl font-bold mb-4">Important Notice</h2>
+          <p className="text-sm text-muted-foreground mb-6">
+            Welcome to our website. By clicking "Accept", you acknowledge and agree to our terms and conditions.
+          </p>
+          <button
+            onClick={handleAccept}
+            className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
+          >
+            Accept
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  return <>{children}</>
+}

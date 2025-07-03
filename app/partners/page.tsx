@@ -50,7 +50,7 @@ export default function LawyersPage() {
             <LawyerCard
               name="Spandana C. M"
               title="Associate"
-              image="/images/IMG_8715.jpg"
+              image="/images/IMG_8686.jpg"
               education={["K.L.E. College of Law (KSLU), Class of 2022"]}
               barAdmissions={["Enrolled with Karnataka State Bar Council in 2022"]}
               bio="Spandana C.M. completed her legal education at K.L.E. College of Law, affiliated with Karnataka State Law University, graduating in 2022. She was enrolled with the Karnataka State Bar Council in the same year. She is currently working as an Associate at Vista Legal, actively assisting in civil, criminal, and family law matters. With a growing interest in trial advocacy and procedure, she continues to gain valuable courtroom experience. Recognized for her calm and diplomatic approach, Spandana combines negotiation skills with a problem-solving mindset. Committed to continuous learning, she strives to contribute effectively to every matter she handles."
@@ -59,7 +59,7 @@ export default function LawyersPage() {
             <LawyerCard
               name="Vandhana Jain"
               title="Associate"
-              image="/images/IMG_8686.jpg"
+              image="/images/IMG_8715.jpg"
               education={[
                 "Christ University, Bachelors in Finance and Accountancy (2019)",
                 "BMS College of Law (KSLU), Class of 2024",

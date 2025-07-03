@@ -57,14 +57,14 @@ export default function LawyersPage() {
               minimal
             />
             <LawyerCard
-              name="Vandhana Jain"
+              name="Vandana Jain"
               title="Associate"
               image="/images/IMG_8715.jpg"
               education={[
                 "Christ University, Bachelors in Finance and Accountancy (2019)",
                 "BMS College of Law (KSLU), Class of 2024",
               ]}
-              barAdmissions={["Practicing in all forums across Karnataka"]}
+              barAdmissions={["Enrolled with Karnataka State Bar council in 2024."]}
               bio="Vandana Jain is currently an Associate with Vista Legal. She is an advocate whose practice ranges across all forums in the State of Karnataka. Miss Jain completed her bachelors in finance and accountancy from Christ University in 2019 and earned her law degree from BMS College of Law affiliated to Karnataka State Law University, Hubli in 2024. A proud first generation litigator, Miss Jain enjoys untangling the fabric of civil litigation. Eager to build her expertise, Miss Jain is a pro-active and result oriented performer with a special interest towards inheritance, land and family law."
               minimal
             />

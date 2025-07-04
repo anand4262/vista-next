@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,8 +17,10 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import WhatsappButton from "@/components/WhatsappButton"
+import emailjs from "@emailjs/browser"
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLFormElement>(null)
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
@@ -43,58 +45,34 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const WEB3FORMS_API_KEY = "db4b5b63-08ed-4a46-800c-dc780a015076"
-
     try {
-      const formPayload = {
-        access_key: WEB3FORMS_API_KEY,
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        service: formData.service,
-        subject: formData.subject || "New contact form submission",
-        message: formData.message,
-        from_website: window.location.hostname,
-      }
+      await emailjs.sendForm(
+        "your_service_id",
+        "your_template_id",
+        formRef.current!,
+        "your_public_key"
+      )
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formPayload),
+      toast({
+        title: "Message Sent Successfully",
+        description: "Thank you for contacting us. We'll get back to you shortly.",
       })
 
-      const data = await response.json()
-
-      if (data.success) {
-        toast({
-          title: "Message Sent Successfully",
-          description: "Thank you for contacting us. We'll get back to you shortly.",
-        })
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          subject: "",
-          message: "",
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: data.message || "There was an error sending your message. Please try again.",
-          variant: "destructive",
-        })
-      }
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        subject: "",
+        message: "",
+      })
     } catch (error) {
       toast({
         title: "Error",
         description: "There was an error sending your message. Please try again.",
         variant: "destructive",
       })
-      console.error("Form submission error:", error)
+      console.error("EmailJS Error:", error)
     } finally {
       setIsSubmitting(false)
     }
@@ -109,10 +87,10 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Contact Form */}
+          {/* Left Column: Contact Form */}
           <div className="rounded-lg border border-border bg-card p-8">
             <h2 className="mb-6 text-2xl font-bold">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
@@ -120,12 +98,11 @@ export default function ContactPage() {
                     id="name"
                     name="name"
                     placeholder="Name"
-                    required
+                    //required
                     value={formData.name}
                     onChange={handleChange}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address</Label>
                   <Input
@@ -133,7 +110,7 @@ export default function ContactPage() {
                     name="email"
                     type="email"
                     placeholder="Email"
-                    required
+                    //required
                     value={formData.email}
                     onChange={handleChange}
                   />
@@ -149,22 +126,11 @@ export default function ContactPage() {
                     placeholder="+91"
                     value={formData.phone}
                     onChange={handleChange}
-                    inputMode="numeric"
-                    onKeyDown={(e) => {
-                      const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"]
-                      const isControlKey = allowedKeys.includes(e.key)
-                      const isNumber = /^[0-9]$/.test(e.key)
-                      const isPlus = e.key === "+" && formData.phone.length === 0
-                      if (!isNumber && !isControlKey && !isPlus) {
-                        e.preventDefault()
-                      }
-                    }}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <Label htmlFor="service">Choose Service</Label>
-                  <Select value={formData.service} onValueChange={handleServiceChange}>
+                  <Select value={formData.service} onValueChange={handleServiceChange} name="service">
                     <SelectTrigger id="service">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
@@ -192,7 +158,7 @@ export default function ContactPage() {
                   id="subject"
                   name="subject"
                   placeholder="Legal Inquiry"
-                  required
+                  //required
                   value={formData.subject}
                   onChange={handleChange}
                 />
@@ -205,7 +171,7 @@ export default function ContactPage() {
                   name="message"
                   placeholder="Please describe your legal matter..."
                   rows={5}
-                  required
+                  //required
                   value={formData.message}
                   onChange={handleChange}
                 />
@@ -221,12 +187,11 @@ export default function ContactPage() {
             </form>
           </div>
 
-          {/* Contact Info and Map */}
+          {/* Right Column: Contact Info and Map */}
           <div className="flex flex-col justify-between space-y-8">
             <div>
               <h2 className="mb-6 text-2xl font-bold">Our Contact Information</h2>
               <div className="space-y-6">
-                {/* Address */}
                 <div className="flex items-start">
                   <MapPin className="mr-4 h-6 w-6 text-primary" />
                   <div>
@@ -240,7 +205,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="flex items-start">
                   <Phone className="mr-4 h-6 w-6 text-primary" />
                   <div>
@@ -255,7 +219,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex items-start">
                   <Mail className="mr-4 h-6 w-6 text-primary" />
                   <div>
@@ -269,7 +232,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social Media */}
                 <div className="flex items-start">
                   <Instagram className="mr-4 h-6 w-6 text-primary" />
                   <div>
@@ -299,7 +261,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map */}
+            {/* Google Map */}
             <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.716481988701!2d77.55614797507675!3d12.98997698732703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d0001721367%3A0x4094641fd1b46226!2sVista%20Legal!5e0!3m2!1sen!2sin!4v1750495432459!5m2!1sen!2sin"
@@ -315,8 +277,9 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
       {/* WhatsApp Floating Button */}
-            <WhatsappButton />
+      <WhatsappButton />
     </div>
   )
 }

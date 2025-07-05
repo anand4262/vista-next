@@ -37,7 +37,7 @@ export default function PopupGate({ children }: { children: React.ReactNode }) {
           <h2 className="text-2xl font-bold mb-4">Disclaimer</h2>
           <p className="text-sm text-muted-foreground mb-6 max-h-[400px] overflow-y-auto text-left">
             The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.
-            By accessing this website, www.vistalegal.com, you acknowledge and confirm that you are seeking
+            By accessing this website, www.vistalegalfirm.com, you acknowledge and confirm that you are seeking
             information relating to Vista Legal of your own accord and that there has been no form of solicitation,
             advertisement, or inducement by Vista Legal or its members. The content of this website is for
             informational purposes only and should not be interpreted as soliciting or advertisement. No material/information

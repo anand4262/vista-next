@@ -47,10 +47,10 @@ export default function ContactPage() {
 
     try {
       await emailjs.sendForm(
-        "your_service_id",
-        "your_template_id",
+        "service_eioag1a",
+        "template_1jk0dsp",
         formRef.current!,
-        "your_public_key"
+        "5pfFNLNR44AGZIUIF"
       )
 
       toast({

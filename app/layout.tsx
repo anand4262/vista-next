@@ -5,7 +5,6 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
-import { headers } from "next/headers"
 import PopupGate from "@/components/PopupGate"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -19,33 +18,21 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const allHeaders = await headers()
-  const pathname =
-    allHeaders.get("x-invoke-path") ||
-    allHeaders.get("x-pathname") ||
-    ""
-
-  const isDisclaimerPage = pathname === "/disclaimer"
-
   return (
     <html lang="en">
       <body className={inter.className}>
         <PopupGate>
-        {isDisclaimerPage ? (
-          <>{children}</>
-        ) : (
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
             <ScrollToTop />
           </div>
-        )}
         </PopupGate>
       </body>
     </html>
